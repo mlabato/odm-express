@@ -90,6 +90,25 @@ const apiController = {
       })
       .catch(errors => console.log(errors))
    },
+//USER DETAIL
+   usersDetail: (req, res) => {
+    db.User.findByPk(req.params.id)
+    .then(user => {
+      if(user == undefined){
+        return res.send("cargando")
+      }else{
+        return res.json(
+          {
+            id: user.id,
+            type: user.type_id,
+            username: user.username,
+            email: user.email,
+          }
+        )
+      }          
+    })
+    .catch(errors => console.log(errors))  
+   },  
 //BOMBILLAS
    bombillas: (req, res) => {
     db.Product.findAll()

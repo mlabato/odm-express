@@ -64,6 +64,7 @@ const userValidation = [
 router.get("/", apiController.apiHome);
 router.get("/products", apiController.products);
 router.get("/users", apiController.users);
+router.get("/users/:id", apiController.usersDetail);
 router.get("/products/:id", apiController.productsDetail);
 router.get("/bombillas", apiController.bombillas);
 router.get("/mates", apiController.mates);
@@ -72,15 +73,14 @@ router.get("/termos", apiController.termos);
 router.get("/onsale", apiController.onSale);
 
 router.post("/create", upload.single("file"), productValidation, productController.save);
-
 router.post("/edit",upload.single("file"), productValidation, productController.edit);
-
-router.post("/login", userValidation, userController.login);
-
 router.post('/delete', productController.destroy);
 
+
+router.post("/login", userValidation, userController.login);
 router.post("/register", userController.register);
-router.post('/userdelete/:id', userController.destroy);
+router.post("/useredit", userValidation, userController.edit);
+router.post('/userdelete', userController.destroy);
 
 
 
