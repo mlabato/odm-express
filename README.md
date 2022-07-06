@@ -1,6 +1,6 @@
 # odmexpress
 
-Back-end for e-commerce website "Outlet de Mates". 
+Back-end service for e-commerce website "Outlet de Mates". 
 
 After finishing my Full Stack Developer studies at Digital House I was excited about giving my first steps as a web developer, so I contacted an instagram entepreneur, Nicolas, and I proposed him to develop an e-commerce for his business.
 
