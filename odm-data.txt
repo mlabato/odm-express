@@ -1,0 +1,133 @@
+INSERT INTO virolas
+(id, `material`)
+VALUES(1, 'aluminio');
+
+INSERT INTO virolas
+(id, `material`)
+VALUES(2, 'alpaca lisa');
+
+INSERT INTO virolas
+(id, `material`)
+VALUES(3, 'alpaca cincelada');
+
+INSERT INTO virolas
+(id, `material`)
+VALUES(4, 'no aplica');
+
+INSERT INTO materials
+(id, `material`)
+VALUES(1, 'alpaca');
+
+INSERT INTO materials
+(id, `material`)
+VALUES(2, 'acero inoxidable');
+
+INSERT INTO materials
+(id, `material`)
+VALUES(3, 'cuero');
+
+INSERT INTO materials
+(id, `material`)
+VALUES(4, 'ecocuero');
+
+INSERT INTO materials
+(id, `material`)
+VALUES(5, 'no aplica');
+
+INSERT INTO colors
+(id, `color`)
+VALUES(1, 'blanco');
+
+INSERT INTO colors
+(id, `color`)
+VALUES(2, 'negro');
+
+INSERT INTO colors
+(id, `color`)
+VALUES(3, 'marron');
+
+INSERT INTO colors
+(id, `color`)
+VALUES(4, 'cuero crudo');
+
+INSERT INTO colors
+(id, `color`)
+VALUES(5, 'marron oscuro');
+
+INSERT INTO colors
+(id, `color`)
+VALUES(6, 'rojo');
+
+INSERT INTO colors
+(id, `color`)
+VALUES(7, 'verde');
+
+INSERT INTO colors
+(id, `color`)
+VALUES(8, 'azul');
+
+INSERT INTO colors
+(id, `color`)
+VALUES(9, 'amarillo');
+
+INSERT INTO colors
+(id, `color`)
+VALUES(10, 'no aplica');
+
+INSERT INTO categories 
+(id, `category`)
+VALUES(1, 'Mate');
+
+INSERT INTO categories 
+(id, `category`)
+VALUES(2, 'Matera');
+
+INSERT INTO categories 
+(id, `category`)
+VALUES(3, 'Bombilla');
+
+INSERT INTO categories 
+(id, `category`)
+VALUES(4, 'Termo');
+
+insert into products 
+(id, `category_id`, `price`, `model`, `discount`, `stock`, `image`, `virola_id`, `color_id`, `material_id` )
+values(1, 1, '1500', 'Camionero', '0', '10', 'camionero.jpg', 1, 10, 5);
+
+insert into products 
+(id, `category_id`, `price`, `model`, `discount`, `stock`, `image`, `virola_id`, `color_id`, `material_id` )
+values(2, 2, '2500', 'De cuero', '10', '10', 'decuero.jpg', 4, 2, 3);
+
+insert into products 
+(id, `category_id`, `price`, `model`, `discount`, `stock`, `image`, `virola_id`, `color_id`, `material_id` )
+values(3, 3, '500', 'De alpaca', '20', '10', 'dealpaca.jpg', 4, 4, 1);
+
+insert into products 
+(id, `category_id`, `price`, `model`, `discount`, `stock`, `image`, `virola_id`, `color_id`, `material_id` )
+values(4, 4, '5500', 'Stanley', '0', '10', 'stanley.jpg', 4, 2, 5);
+
+insert into products 
+(id, `category_id`, `price`, `model`, `discount`, `stock`, `image`, `virola_id`, `color_id`, `material_id` )
+values(5, 1, '2500', 'Torpedo', '0', '10', 'torpedo.jpg', 1, 10, 5);
+
+insert into products 
+(id, `category_id`, `price`, `model`, `discount`, `stock`, `image`, `virola_id`, `color_id`, `material_id` )
+values(6, 3, '1500', 'De aluminio', '10', '10', 'dealuminio.jpg', 4, 4, 2);
+
+insert into products 
+(id, `category_id`, `price`, `model`, `discount`, `stock`, `image`, `virola_id`, `color_id`, `material_id` )
+values(6, 3, '1500', 'De aluminio', '10', '10', 'dealuminio.jpg', 4, 4, 2);
+
+INSERT INTO users
+(id,`username`, `email`, `type_id`, `password`)
+VALUES(1, 'nmolina', 'nicolasmolina01@gmail.com', 1, 'outletmates1');
+
+INSERT INTO User_types
+(id, `type`)
+values (1, 'admin');
+
+INSERT INTO User_types
+(id, `type`)
+VALUES(2, 'cliente');
+
+select * from products;

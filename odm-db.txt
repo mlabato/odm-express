@@ -1,0 +1,65 @@
+create schema if not exists outletdemates;
+
+use outletdemates;
+
+CREATE TABLE `Products` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `category_id` INT NOT NULL,
+   `price` DECIMAL NOT NULL,
+   `model` VARCHAR(255) NOT NULL,
+   `stock`INT NOT null,
+   `discount` INT,
+   `image` VARCHAR(255) NOT NULL,
+   `virola_id` INT NOT NULL,
+   `color_id` INT NOT NULL,
+   `material_id` INT NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Categories` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `category` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Virolas` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `material` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Colors` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `color` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Materials` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `material` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Users` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `username` VARCHAR(255) NOT NULL UNIQUE,
+   `email` VARCHAR(255) NOT NULL UNIQUE,
+   `type_id` INT NOT NULL,
+   `password` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+create table `User_types`(
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`type` VARCHAR(255) NOT NULL,
+	PRIMARY KEY (`id`)
+);
+
+
+
+ALTER TABLE `Products` ADD CONSTRAINT virola_id_FK FOREIGN KEY (`virola_id`) REFERENCES `Virolas`(`id`)  ;
+ALTER TABLE `Products` ADD CONSTRAINT color_id_FK FOREIGN KEY (`color_id`) REFERENCES `Colors`(`id`)  ;
+ALTER TABLE `Products` ADD CONSTRAINT material_id_FK FOREIGN KEY (`material_id`) REFERENCES `Materials`(`id`)  ;
+ALTER TABLE `Products` ADD CONSTRAINT category_id_FK FOREIGN KEY (`category_id`) REFERENCES `Categories`(`id`)  ;
+ALTER TABLE `Users` ADD CONSTRAINT type_id_FK FOREIGN KEY (`type_id`) REFERENCES `User_types`(`id`)  ;
+
